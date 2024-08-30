@@ -36,12 +36,12 @@ void main() {
     vec4 textureColor = texture2D(uTexture, vUv);
     textureColor.rgb *= vElevation + .5;
     gl_FragColor = textureColor * vec4(uColor, 1.0);
-}`;const D={title:"Shader/Flag",tags:["autodocs"],argTypes:{color:{control:"color",description:"Flag color"},frequency:{control:"object",description:"Flag frequency"}},args:{color:"white",frequency:{x:10,y:5}},decorators:[e=>c.jsx(E,{cameraPosition:[0,0,1],children:c.jsx(e,{})})]},s={render({color:e,frequency:t}){const o=f("/textures/flag-french.jpg"),r=i.useMemo(()=>new h(1,1,32,32),[]),u=i.useMemo(()=>new j({vertexShader:P,fragmentShader:S,uniforms:{uFrequency:{value:new w(t.x,t.y)},uTime:{value:0},uColor:{value:new M(e)},uTexture:{value:o}},side:b}),[e,t,o]);return F(n=>{const a=n.clock.getElapsedTime();u.uniforms.uTime.value=a}),c.jsx("mesh",{geometry:r,material:u})}};var x,g,T;s.parameters={...s.parameters,docs:{...(x=s.parameters)==null?void 0:x.docs,source:{originalSource:`{
+}`;const D={title:"Shader/Flag",tags:["autodocs"],argTypes:{color:{control:"color",description:"Flag color"},frequency:{control:"object",description:"Flag frequency"}},args:{color:"white",frequency:{x:10,y:5}},decorators:[e=>c.jsx(E,{cameraPosition:[0,0,1],children:c.jsx(e,{})})]},s={render({color:e,frequency:t}){const o=f("textures/flag-french.jpg"),r=i.useMemo(()=>new h(1,1,32,32),[]),u=i.useMemo(()=>new j({vertexShader:P,fragmentShader:S,uniforms:{uFrequency:{value:new w(t.x,t.y)},uTime:{value:0},uColor:{value:new M(e)},uTexture:{value:o}},side:b}),[e,t,o]);return F(n=>{const a=n.clock.getElapsedTime();u.uniforms.uTime.value=a}),c.jsx("mesh",{geometry:r,material:u})}};var x,g,T;s.parameters={...s.parameters,docs:{...(x=s.parameters)==null?void 0:x.docs,source:{originalSource:`{
   render({
     color,
     frequency
   }) {
-    const flagTexture = useTexture('/textures/flag-french.jpg');
+    const flagTexture = useTexture('textures/flag-french.jpg');
     const geometry = useMemo(() => new THREE.PlaneGeometry(1, 1, 32, 32), []);
     const material = useMemo(() => new THREE.RawShaderMaterial({
       vertexShader,
